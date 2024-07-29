@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовая страница</title>
+</head>
+<body>
+<h1>Список билетов</h1>
+<ul>
+    <li th:each="ticket : ${tickets}">
+        <span th:text="${ticket.number}"></span> - <span th:text="${ticket.createdAt}"></span>
+    </li>
+</ul>
+</body>
+</html>
