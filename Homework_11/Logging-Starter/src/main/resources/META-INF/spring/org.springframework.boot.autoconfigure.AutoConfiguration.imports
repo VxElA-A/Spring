@@ -1,0 +1,2 @@
+com.example.aspect.Logging.LoggingAutoConfiguration
+com.example.aspect.Logging.RecoverAutoConfiguration

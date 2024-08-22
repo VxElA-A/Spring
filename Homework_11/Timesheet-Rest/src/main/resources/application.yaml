@@ -1,0 +1,59 @@
+application:
+  recover:
+    enabled: true  # TODO - доделать
+    no-recover-for:
+      - java.lang.IllegalArgumentException
+      - java.lang.IllegalStateException
+  logging:
+    enabled: true
+    loggingLevel: WARN
+    print-args: true  # TODO - доделать
+    output:
+      - type: file
+        level: DEBUG
+      - type: console
+        level: INFO
+        enabled: true
+#      - WARN
+#      - INFO
+#    mapping:
+#      key1:
+#        -value1
+#        -value2
+#      key2: value2
+server:
+  port: 12345
+spring:
+  application:
+    name: timesheet-rest
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      platform: postgresql
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+      mode: always
+#      initialization: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    preferIpAddress: true
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+##      ddl-auto: create-drop
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
